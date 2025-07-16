@@ -10,6 +10,8 @@ import Underline from "@tiptap/extension-underline";
 import { FontFamily, TextStyle } from "@tiptap/extension-text-style";
 import Highlight from "@tiptap/extension-highlight";
 import { Color } from "@tiptap/extension-text-style";
+import Link from '@tiptap/extension-link'
+
 
 import { useEditorStore } from "@/store/use-editor-store";
 
@@ -59,6 +61,11 @@ const Editor = () => {
       Underline,
       FontFamily,
       TextStyle,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https"
+      }),
       Highlight.configure({
         multicolor: true,
       }
